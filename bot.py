@@ -9,6 +9,7 @@ prefix = '%'
 INITIAL_EXTENSIONS = [
     'ext.ehelp',
     'ext.mod'
+    'ext.music'
 ]
 
 bot = commands.Bot(command_prefix=prefix)
