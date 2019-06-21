@@ -8,7 +8,6 @@ from discord import opus
 
 token = ',,'
 prefix = '%'
-botname = ',,'
 
 bot = commands.Bot(command_prefix=prefix)
 
@@ -16,7 +15,7 @@ bot = commands.Bot(command_prefix=prefix)
 @bot.event
 async def on_ready():
     print('Бот был запущен с параметрами:')
-    print('Имя бота:' + bot.user.name + botname)
+    print('Имя бота:' + bot.user.name)
     print('ID бота:' + str(bot.user.id))
     print('------')
 
@@ -72,7 +71,7 @@ async def cat(ctx):
 @bot.command()
 async def info(ctx):
     embed = discord.Embed(
-        title="Test bot", description="Nicest bot there is ever.", color=0xeee657)
+        title=bot.user.name, description="Nicest bot there is ever.", color=0xeee657)
     embed.add_field(name="Author", value="LeMIT")
     embed.add_field(name="Guild count", value=f"{len(bot.guilds)}")
     embed.add_field(name="Invite", value="https://discord.gg/5CHCJk2")
