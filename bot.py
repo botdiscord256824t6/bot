@@ -5,8 +5,8 @@ import youtube_dl
 import requests as rq
 from discord import opus
 
+from const import token
 
-token = ',,'
 prefix = '%'
 
 bot = commands.Bot(command_prefix=prefix)
