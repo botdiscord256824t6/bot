@@ -286,8 +286,8 @@ class Music(commands.Cog):
 
     async def initiate_nodes(self):
         nodes = {'MAIN': {'host': '127.0.0.1',
-                          'port': 2333,
-                          'rest_url': 'http://127.0.0.1:2333',
+                          'port': 2334,
+                          'rest_url': 'http://127.0.0.1:2334',
                           'password': "youwillneverguess",
                           'identifier': 'MAIN',
                           'region': 'us_central'}}

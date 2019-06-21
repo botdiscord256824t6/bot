@@ -48,7 +48,7 @@ async def cat(ctx):
 
 
 @bot.command()
-async def info(ctx):
+async def bot_info(ctx):
     embed = discord.Embed(
         title=bot.user.name, description="Nicest bot there is ever.", color=0xeee657)
     embed.add_field(name="Author", value="LeMIT")
