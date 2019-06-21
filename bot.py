@@ -65,16 +65,9 @@ async def cat(ctx):
 async def info(ctx):
     embed = discord.Embed(
         title="Test bot", description="Nicest bot there is ever.", color=0xeee657)
-
-    # give info about you here
     embed.add_field(name="Author", value="LeMIT")
-
-    # Shows the number of servers the bot is member of.
-    embed.add_field(name="Server count", value=f"{len(bot.guilds)}")
-
-    # give users a link to invite thsi bot to their server
-    embed.add_field(name="Invite", value="https://discord.gg/")
-
+    embed.add_field(name="Guild count", value=f"{len(bot.guilds)}")
+    embed.add_field(name="Invite", value="https://discord.gg/5CHCJk2")
     await ctx.send(embed=embed)
 
 bot.run(token)
