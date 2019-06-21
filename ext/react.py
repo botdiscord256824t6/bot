@@ -95,7 +95,7 @@ class Pages:
         @react.reaction('\N{BLACK RIGHT-POINTING DOUBLE TRIANGLE WITH VERTICAL BAR}')
         async def last(ctx):
             '''goes to the last page'''
-            await self.show_page(self.page - 1)
+            await self.show_page(len(self.pages) - 1)
 
         @react.reaction('\N{INPUT SYMBOL FOR NUMBERS}')
         async def goto(ctx):

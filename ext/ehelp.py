@@ -77,7 +77,7 @@ class NewHelpCommand(commands.HelpCommand):
                 for command in filtered:
                     if command.name not in names:
                         embeds[-1].add_field(name=self.get_command_signature(command),
-                                             value=command.help)
+                                             value=command.short_doc or 'No help provided.')
                         names.append(command.name)
 
         pages = Pages(self.context, [Message(embed=e) for e in embeds], 30.0)
