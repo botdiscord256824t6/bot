@@ -7,6 +7,7 @@ from discord.ext import commands
 
 class ReAct:
     def __init__(self, ctx, message, timeout: Optional[float] = None, remove: bool = True):
+        self.remove = remove
         self.timeout = timeout
         self.reactions = OrderedDict()
         self.ctx = ctx
@@ -37,8 +38,7 @@ class ReAct:
             await self.message.add_reaction(i)
         while True:
             try:
-                # r: discord.Reaction = (await self.bot.wait_for('reaction_add', timeout=self.timeout, check=check))[0]
-                r: discord.RawReactionActionEvent = (await self.bot.wait_for('raw_reaction_add', timeout=self.timeout, check=check))[0]
+                r: discord.RawReactionActionEvent = (await self.bot.wait_for('raw_reaction_add', timeout=self.timeout, check=check))
             except asyncio.TimeoutError:
                 return await self.terminate()
             try:
@@ -46,8 +46,8 @@ class ReAct:
             except:
                 await self.terminate()
                 raise
-            if remove:
-                await self.message.remove_reaction(r, self.ctx.author)
+            if self.remove:
+                await self.message.remove_reaction(r.emoji, self.ctx.author)
 
 
 class Message(dict):
