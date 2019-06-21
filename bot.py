@@ -55,5 +55,7 @@ async def info(ctx):
     embed.add_field(name="Invite", value="https://discord.gg/5CHCJk2")
     await ctx.send(embed=embed)
 
+for i in INITIAL_EXTENSIONS:
+    bot.load_extension(i)
 
 bot.run(token)
