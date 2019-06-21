@@ -21,24 +21,28 @@ async def on_ready():
     print('------')
 
 
-@bot.command()
-async def plus(ctx, a: int, b: int):
+@bot.command(aliases=['plus'])
+async def add(ctx, a: int, b: int):
+    '''Adds `a` to `b`'''
     await ctx.send(a + b)
 
 
-@bot.command()
-async def umnozit(ctx, a: int, b: int):
+@bot.command(aliases=['nultiply', 'umnozit'])
+async def mult(ctx, a: int, b: int):
+    '''Multiplies `a` and `b`'''
     await ctx.send(a * b)
 
 
 @bot.command()
 async def greet(ctx):
+    '''Greets'''
     await ctx.send(":smiley: :wave: Hello, there!")
 
 
 @bot.command()
 @commands.has_permissions(kick_members=True)
 async def kick(ctx, member: discord.Member):
+    '''Kicks `member`'''
     await member.kick()
     await ctx.send("__**Successfully User" + member + "Has Been Kicked!**__")
 
@@ -46,6 +50,7 @@ async def kick(ctx, member: discord.Member):
 @bot.command()
 @commands.has_permissions(ban_members=True)
 async def ban(ctx, member: discord.Member):
+    '''Bans `member`'''
     await member.ban()
     await ctx.send("__**Successfully User" + member + " Has Been Baned!**__")
 
@@ -53,11 +58,14 @@ async def ban(ctx, member: discord.Member):
 @bot.command()
 @commands.has_permissions(manage_roles=True, ban_members=True)
 async def mute(ctx, member: discord.Member):
+    '''Mutes `member`
+You need to have role called `Muted` with right permissions to make this command work'''
     role = await discord.utils.get(ctx.guild.roles, name='Muted')
 
 
 @bot.command()
 async def cat(ctx):
+    '''Sends a cat'''
     await ctx.send("https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif")
 
 
