@@ -1,11 +1,9 @@
+import asyncio
 import discord
 from discord.ext import commands
-import asyncio
-import youtube_dl
-import requests as rq
-from discord import opus
 
 from const import token
+
 
 prefix = '%'
 INITIAL_EXTENSIONS = [
