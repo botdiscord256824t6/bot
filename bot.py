@@ -8,7 +8,7 @@ from const import token
 prefix = '%'
 INITIAL_EXTENSIONS = [
     'ext.ehelp',
-    'ext.mod'
+    'ext.mod',
     'ext.music'
 ]
 
